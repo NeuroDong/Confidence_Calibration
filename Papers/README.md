@@ -12,7 +12,7 @@
 |-------|-------|-------|-------|
 |[Distribution-Free Calibration Guarantees for Histogram Binning without Sample Splitting](https://proceedings.mlr.press/v139/gupta21b.html)|ICML|2021|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/aigen/df-posthoc-calibration)|
 |[Calibration of Neural Networks using Splines](https://arxiv.org/abs/2006.12800)|ICLR|2021|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/kartikgupta-at-anu/spline-calibration)|
-|[Mitigating Bias in Calibration Error Estimation](https://proceedings.mlr.press/v151/roelofs22a.html)|PMLR / AISTATS|2022|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/google-research/google-research/tree/master/caltrain)|
+|[Mitigating Bias in Calibration Error Estimation](https://proceedings.mlr.press/v151/roelofs22a.html)|AISTATS|2022|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/google-research/google-research/tree/master/caltrain)|
 |[Smooth ECE: Principled Reliability Diagrams via Kernel Smoothing](https://arxiv.org/abs/2309.12236)|ICLR|2024|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/apple/ml-calibration)|
 |[Verified Uncertainty Calibration](https://proceedings.neurips.cc/paper/2019/hash/f8c0c968632845cd133308b1a494967f-Abstract.html)|NeurIPS|2019|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/p-lambda/verified_calibration)|
 
