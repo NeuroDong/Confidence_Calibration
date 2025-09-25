@@ -9,7 +9,7 @@
 # Calibration Metric
 | Paper | Source | Year| Code|
 |-------|-------|-------|-------|
-|[<font size="0.5">Distribution-Free Calibration Guarantees for Histogram Binning without Sample Splitting</font>](https://proceedings.mlr.press/v139/gupta21b.html)|ICML|2021|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/aigen/df-posthoc-calibration)|
+|[Distribution-Free Calibration Guarantees for Histogram Binning without Sample Splitting](https://proceedings.mlr.press/v139/gupta21b.html)|ICML|2021|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/aigen/df-posthoc-calibration)|
 
 
 # Calibration Method
