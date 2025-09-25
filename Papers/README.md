@@ -1,15 +1,17 @@
 # 📕 Table of Contents
+- [📕 Table of Contents](#-table-of-contents)
 - [Calibration Metric](#calibration-metric)
 - [Calibration Method](#calibration-method)
 - [Calibration under Distribution Shift](#calibration-under-distribution-shift)
-  - [Calibration under Label Shift](#calibration-under-label-shift)
-  - [Calibration under Covariate Shift](#calibration-under-covariate-shift)
-  - [Calibration under Joint Shift](#calibration-under-joint-shift)
+- [Calibration under Label Shift](#calibration-under-label-shift)
+- [Calibration under Covariate Shift](#calibration-under-covariate-shift)
+- [Calibration under Joint Shift](#calibration-under-joint-shift)
 
 # Calibration Metric
 | Paper | Source | Year| Code|
 |-------|-------|-------|-------|
 |[Distribution-Free Calibration Guarantees for Histogram Binning without Sample Splitting](https://proceedings.mlr.press/v139/gupta21b.html)|ICML|2021|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/aigen/df-posthoc-calibration)|
+|[Calibration of Neural Networks using Splines](https://arxiv.org/abs/2006.12800)|ICLR|2021|[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/kartikgupta-at-anu/spline-calibration)|
 
 
 # Calibration Method
