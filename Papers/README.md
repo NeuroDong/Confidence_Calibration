@@ -37,4 +37,5 @@
 |-------|-------|-------|-------|:--:|:--:|:--:|:--:|
 
 # How to Update Citations
-
+Run the code:
+    Python Fetch_citation.py
