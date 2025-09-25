@@ -18,23 +18,23 @@
 
 
 # Calibration Method
-| Paper | Source | Year| Code| Citations | Citations | Citations | Citations |
-|-------|-------|-------|-------|:--:|:--:|:--:|:--:|
+| Paper | Source | Year| Code| Citations |
+|-------|-------|-------|-------|:--:|
 
 
 # Calibration under Distribution Shift
 
 # Calibration under Label Shift
-| Paper | Source | Year| Code| Citations | Citations | Citations | Citations |
-|-------|-------|-------|-------|:--:|:--:|:--:|:--:|
+| Paper | Source | Year| Code| Citations | 
+|-------|-------|-------|-------|:--:|
 
 # Calibration under Covariate Shift
-| Paper | Source | Year| Code| Citations | Citations | Citations | Citations |
-|-------|-------|-------|-------|:--:|:--:|:--:|:--:|
+| Paper | Source | Year| Code| Citations | 
+|-------|-------|-------|-------|:--:|
 
 # Calibration under Joint Shift
-| Paper | Source | Year| Code| Citations | Citations | Citations | Citations |
-|-------|-------|-------|-------|:--:|:--:|:--:|:--:|
+| Paper | Source | Year| Code| Citations | 
+|-------|-------|-------|-------|:--:|
 
 # How to Update Citations
 Run the code:
