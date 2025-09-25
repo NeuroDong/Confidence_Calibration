@@ -1,6 +1,3 @@
-# Confidence_Calibration
-A repository dedicated to recording classic papers, classic datasets, and classic codes for confidence calibration.
-
 <img src="https://github.com/NeuroDong/CalibLLM/blob/main/images/logo.png" width="100%">
 
 # About This Repository
