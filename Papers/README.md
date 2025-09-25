@@ -1,5 +1,5 @@
 # 📕 Table of Contents
-- [Calibration Metric](# Calibration Metric)
+- [Calibration Metric](#calibration-metric)
 
 # Calibration Metric
 | Paper | Source | Year| Code|
