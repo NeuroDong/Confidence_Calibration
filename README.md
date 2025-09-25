@@ -1,5 +1,3 @@
-<img src="https://github.com/NeuroDong/CalibLLM/blob/main/images/logo.png" width="100%">
-
 # About This Repository
 The repository is an open-source solution library for **confidence calibration**. It provides:
 - The latest and most classic research **papers** in the field are shared in the folder named ["Papers"](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Papers).
