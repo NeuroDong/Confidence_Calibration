@@ -4,6 +4,35 @@ import os
 from typing import List, Optional
 
 
+import re
+from difflib import SequenceMatcher
+
+def is_same_title(title_a: str, title_b: str, threshold: float = 0.9) -> bool:
+    """
+    判断两个标题是否对应同一篇文章。
+    
+    参数:
+        title_a, title_b: 待比较的两个标题
+        threshold: 相似度阈值 (0~1)，默认 0.9
+    
+    返回:
+        bool: True 表示认为是同一篇文章
+    """
+    def normalize(text: str) -> str:
+        # 转小写，去掉多余空格和标点
+        text = text.lower()
+        text = re.sub(r"[^a-z0-9\s]", " ", text)  # 只保留字母数字空格
+        text = re.sub(r"\s+", " ", text).strip()
+        return text
+    
+    norm_a = normalize(title_a)
+    norm_b = normalize(title_b)
+    
+    # 计算相似度
+    ratio = SequenceMatcher(None, norm_a, norm_b).ratio()
+    return ratio >= threshold
+
+
 def get_citations_by_title(title: str) -> Optional[int]:
     """Query OpenAlex for the most relevant work matching title and return cited_by_count.
 
@@ -26,8 +55,11 @@ def get_citations_by_title(title: str) -> Optional[int]:
         return None
 
     paper = data["results"][0]
-    return paper.get("cited_by_count")
-
+    if is_same_title(title, paper.get("title", "")):
+        return paper.get("cited_by_count")
+    else:
+        print(f"Title mismatch: '{title}' vs '{paper.get('title', '')}'")
+        return None
 
 def s2_by_title(title: str):
     url = "https://api.semanticscholar.org/graph/v1/paper/search"
@@ -100,11 +132,17 @@ def generate_badges_for_readme(readme_path: str, badges_dir: str = "badges") -> 
             b = s2_by_title(title)
             h += 1
 
-        if isinstance(b,int):
-            count = a + b
-        else:
+        if a is None and not isinstance(b,int):
+            count = None
+            print(f"OpenAlex and Semantic Scholar both failed for {title}!")
+        elif a is None and isinstance(b,int):
+            count = b
+            print(f"OpenAlex failed for {title}!")
+        elif a is not None and not isinstance(b,int):
             count = a
             print(f"Semantic Scholar failed for {title}!")
+        elif a is not None and isinstance(b,int):
+            count = a+b
 
         msg = count if count is not None else "n/a"
 
