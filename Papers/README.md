@@ -68,9 +68,6 @@
 
 # Calibration under Distribution Shift
 
-
-# Calibration under Distribution Shift
-
 ## Calibration under Label Shift
 | Paper | Source | Year| Code| Citations | 
 |-------|-------|-------|-------|:--:|
