@@ -2,7 +2,13 @@
 - [📕 Table of Contents](#-table-of-contents)
 - [Calibration Metric](#calibration-metric)
 - [Calibration Method](#calibration-method)
+  - [Train-time Calibration](#train-time-calibration)
+  - [Post-hoc Calibration](#post-hoc-calibration)
+    - [Parametric Method](#parametric-method)
+    - [Non-parametric Method](#non-parametric-method)
+    - [Mixed Method](#mixed-method)
 - [Calibration under Distribution Shift](#calibration-under-distribution-shift)
+- [Calibration under Distribution Shift](#calibration-under-distribution-shift-1)
   - [Calibration under Label Shift](#calibration-under-label-shift)
   - [Calibration under Covariate Shift](#calibration-under-covariate-shift)
   - [Calibration under Joint Shift](#calibration-under-joint-shift)
@@ -29,8 +35,37 @@
 
 
 # Calibration Method
-| Paper | Source | Year| Code| Citations |
-|-------|-------|-------|-------|:--:|
+## Train-time Calibration
+| Paper | Name| Source | Year| Code| Citations |
+|-------|-------|-------|-------|-------|:--:|
+|[Calibration Bottleneck: Over-compressed Representations are Less Calibratable](https://proceedings.mlr.press/v235/wang24cm.html)|PLP|ICML|2024|[![Star](https://img.shields.io/github/stars/dengbaowang/PLP.svg?style=social&label=Star)](https://github.com/dengbaowang/PLP)||
+
+## Post-hoc Calibration
+### Parametric Method
+| Paper | Name| Source | Year| Code| Citations |
+|-------|-------|-------|-------|-------|:--:|
+|[On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a.html)|Temperature Scaling|ICML|2017|None||
+|[Intra Order-Preserving Functions for Calibration of Multi-Class Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2020/hash/9bc99c590be3511b8d53741684ef574c-Abstract.html)|Intra Order-Preserving Calibration|NeurIPS|2020|None||
+|[Beyond temperature scaling: Obtaining well-calibrated multi-class probabilities with dirichlet calibration](https://proceedings.neurips.cc/paper/2019/hash/8ca01ea920679a0fe3728441494041b9-Abstract.html)|Dirichlet Calibration|NeurIPS|2019|[![Star](https://img.shields.io/github/stars/dirichletcal/dirichletcal.github.io.svg?style=social&label=Star)](https://github.com/dirichletcal/dirichletcal.github.io)||
+|[Beta calibration: a well-founded and easily implemented improvement on logistic calibration for binary classiﬁers](https://proceedings.mlr.press/v54/kull17a.html)|Beta Calibration|AISTATS|2017|[![Star](https://img.shields.io/github/stars/betacal/betacal.github.io.svg?style=social&label=Star)](https://github.com/betacal/betacal.github.io)||
+|[Probabilistic Outputs for Support Vector Machines and Comparisons to Regularized Likelihood Methods]()|Platt Scaling|Advances in Large Margin Classifiers|1999|None||
+
+### Non-parametric Method
+| Paper | Name| Source | Year| Code| Citations |
+|-------|-------|-------|-------|-------|:--:|
+|[Obtaining Well Calibrated Probabilities Using Bayesian Binning](https://ojs.aaai.org/index.php/AAAI/article/view/9602)|Bayesian Binning|AAAI|2015|None||
+|[Obtaining calibrated probability estimates from decision trees and naive bayesian classifiers](https://dl.acm.org/doi/abs/10.5555/645530.655658)|Histogram Binning|ICML|2001|None||
+|[Transforming classifier scores into accurate multiclass probability estimates](https://dl.acm.org/doi/abs/10.1145/775047.775151)|Isotonic Regression|KDD|2002|None||
+
+### Mixed Method
+| Paper | Name| Source | Year| Code| Citations |
+|-------|-------|-------|-------|-------|:--:|
+|[Mix-n-Match : Ensemble and Compositional Methods for Uncertainty Calibration in Deep Learning](https://proceedings.mlr.press/v119/zhang20k.html)|Mix-n-Match|ICML|2020|[![Star](https://img.shields.io/github/stars/zhang64-llnl/Mix-n-Match-Calibration.svg?style=social&label=Star)](https://github.com/zhang64-llnl/Mix-n-Match-Calibration)||
+|[Verified Uncertainty Calibration](https://proceedings.neurips.cc/paper/2019/hash/f8c0c968632845cd133308b1a494967f-Abstract.html)|Scaling-binning|NeurIPS|2020|[![Star](https://img.shields.io/github/stars/p-lambda/verified_calibration.svg?style=social&label=Star)](https://github.com/p-lambda/verified_calibration)||
+|[Calibrating User Response Predictions in Online Advertising](https://link.springer.com/chapter/10.1007/978-3-030-67667-4_13)|SIR|ECML-PKDD|2020|None||
+|[MBCT: Tree-Based Feature-Aware Binning for Individual Uncertainty Calibration](https://dl.acm.org/doi/abs/10.1145/3485447.3512096)|MBCT|WWW|2022|[![Star](https://img.shields.io/github/stars/huangsg1/Tree-Based-Feature-Aware-Binning-for-Individual-Uncertainty-Calibration.svg?style=social&label=Star)](https://github.com/huangsg1/Tree-Based-Feature-Aware-Binning-for-Individual-Uncertainty-Calibration)||
+
+# Calibration under Distribution Shift
 
 
 # Calibration under Distribution Shift
