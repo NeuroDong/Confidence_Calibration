@@ -39,6 +39,7 @@
 | Paper | Name| Source | Year| Code| Citations |
 |-------|-------|-------|-------|-------|:--:|
 |[Calibration Bottleneck: Over-compressed Representations are Less Calibratable](https://proceedings.mlr.press/v235/wang24cm.html)|PLP|ICML|2024|[![Star](https://img.shields.io/github/stars/dengbaowang/PLP.svg?style=social&label=Star)](https://github.com/dengbaowang/PLP)|[![Citations](badges/Calibration_Bottleneck__Over-compressed_Representations_are_Less_Calibratable.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Calibration+Bottleneck%3A+Over-compressed+Representations+are+Less+Calibratable&btnG=)|
+|[When Does Label Smoothing Help?](https://proceedings.neurips.cc/paper_files/paper/2019/hash/f1748d6b0fd9d439f71450117eba2725-Abstract.html?ref=gojiberries.io)||Label Smoothing|NeurIPS|2019|None|[![Citations](badges/When_Does_Label_Smoothing_Help_.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=When+does+label+smoothing+help%3F&btnG=)|
 
 ## Post-hoc Calibration
 ### Parametric Method
