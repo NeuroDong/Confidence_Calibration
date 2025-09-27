@@ -67,7 +67,6 @@
 |[MBCT: Tree-Based Feature-Aware Binning for Individual Uncertainty Calibration](https://dl.acm.org/doi/abs/10.1145/3485447.3512096)|MBCT|WWW|2022|[![Star](https://img.shields.io/github/stars/huangsg1/Tree-Based-Feature-Aware-Binning-for-Individual-Uncertainty-Calibration.svg?style=social&label=Star)](https://github.com/huangsg1/Tree-Based-Feature-Aware-Binning-for-Individual-Uncertainty-Calibration)|[![Citations](badges/MBCT__Tree-Based_Feature-Aware_Binning_for_Individual_Uncertainty_Calibration.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=MBCT%3A+Tree-Based+Feature-Aware+Binning+for+Individual+Uncertainty+Calibration&btnG=)|
 
 # Calibration under Distribution Shift
-
 ## Calibration under Label Shift
 | Paper | Source | Year| Code| Citations | 
 |-------|-------|-------|-------|:--:|
