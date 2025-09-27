@@ -8,7 +8,6 @@
     - [Non-parametric Method](#non-parametric-method)
     - [Mixed Method](#mixed-method)
 - [Calibration under Distribution Shift](#calibration-under-distribution-shift)
-- [Calibration under Distribution Shift](#calibration-under-distribution-shift-1)
   - [Calibration under Label Shift](#calibration-under-label-shift)
   - [Calibration under Covariate Shift](#calibration-under-covariate-shift)
   - [Calibration under Joint Shift](#calibration-under-joint-shift)
