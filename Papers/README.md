@@ -9,7 +9,7 @@
     - [Mixed Method](#mixed-method)
 - [Calibration under Distribution Shift](#calibration-under-distribution-shift)
   - [Calibration under Label Shift](#calibration-under-label-shift)
-    - [Calibration under Class Imbalance](#Calibration-under-Class-Imbalance)
+    - [Calibration under Class Imbalance](#calibration-under-class-imbalance)
   - [Calibration under Covariate Shift](#calibration-under-covariate-shift)
   - [Calibration under Joint Shift](#calibration-under-joint-shift)
 - [How to Update Citations](#how-to-update-citations)
@@ -90,6 +90,9 @@
 ## Calibration under Joint Shift
 | Paper | Source | Year| Code| Citations | 
 |-------|-------|-------|-------|:--:|
+|[Estimating and Explaining Model Performance When Both Covariates and Labels Shift](https://proceedings.neurips.cc/paper_files/paper/2022/hash/4aa13186c795a52ba88f5b822f4b77eb-Abstract-Conference.html)| NeurIPS | 2022 | [![Star](https://img.shields.io/github/stars/stanford-futuredata/SparseJointShift.svg?style=social&label=Star)](https://github.com/stanford-futuredata/SparseJointShift) | [![Citations](badges/Estimating_and_Explaining_Model_Performance_When_Both_Covariates_and_Labels_Shift.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Estimating+and+Explaining+Model+Performance+When+Both+Covariates+and+Labels+Shift&btnG=) |
+|[Factorizable Joint Shift in Multinomial Classification](https://www.mdpi.com/2504-4990/4/3/38)| Machine Learning and Knowledge Extraction | 2022 | None | [![Citations](badges/Factorizable_Joint_Shift_in_Multinomial_Classification.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Factorizable+Joint+Shift+in+Multinomial+Classification&btnG=) |
+|[Domain Adaptation with Factorizable Joint Shift](https://arxiv.org/abs/2203.02902)| ICML Workshop | 2021 | None | [![Citations](badges/Domain_Adaptation_with_Factorizable_Joint_Shift.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Domain+Adaptation+with+Factorizable+Joint+Shift&btnG=) |
 
 # How to Update Citations
 Run the code:
