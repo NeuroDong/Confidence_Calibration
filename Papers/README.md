@@ -74,6 +74,10 @@
 |[Distribution-free uncertainty quantification for classification under label shift](https://proceedings.mlr.press/v161/podkopaev21a.html)| UAI | 2021 | None | [![Citations](badges/Distribution-free_uncertainty_quantification_for_classification_under_label_shift.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Distribution-free+uncertainty+quantification+for+classification+under+label+shift&btnG=)|
 |[Disentangling Label Distribution for Long-tailed Visual Recognition](https://openaccess.thecvf.com/content/CVPR2021/html/Hong_Disentangling_Label_Distribution_for_Long-Tailed_Visual_Recognition_CVPR_2021_paper.html)| ICCV | 2021 | [![Star](https://img.shields.io/github/stars/hyperconnect/LADE.svg?style=social&label=Star)](https://github.com/hyperconnect/LADE) | [![Citations](badges/Disentangling_Label_Distribution_for_Long-tailed_Visual_Recognition.svg)](https://scholar.google.com.hk/scholar?hl=zh-CN&as_sdt=0%2C5&q=Disentangling+Label+Distribution+for+Long-tailed+Visual+Recognition&btnG=) |
 
+### Calibration under class imbalance
+| Paper | Source | Year| Code| Citations | 
+|-------|-------|-------|-------|:--:|
+
 ## Calibration under Covariate Shift
 | Paper | Source | Year| Code| Citations | 
 |-------|-------|-------|-------|:--:| 
