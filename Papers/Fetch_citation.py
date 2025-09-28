@@ -46,7 +46,7 @@ def get_citations_by_title(title: str) -> Optional[int]:
     }
     headers = {"User-Agent": "CitationFetcher/1.0"}
 
-    resp = requests.get(url, params=params, headers=headers, timeout=15)
+    resp = requests.get(url, params=params, headers=headers, timeout=50)
     if resp.status_code != 200:
         raise RuntimeError(f"HTTP {resp.status_code} from OpenAlex")
 
