@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2025/09/30 21:00
+# @File    : ECE_KDE.py
+# Reference paper: "A Consistent and Differentiable Lp Canonical Calibration Error Estimator"
+
 import torch
 from torch import nn
 
@@ -23,7 +28,6 @@ def get_bandwidth(f, device):
             max_b = b
 
     return max_b
-
 
 def get_ece_kde(f, y, p, mc_type, device):
     """
