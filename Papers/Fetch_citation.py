@@ -64,7 +64,7 @@ def get_citations_by_title(title: str) -> Optional[int]:
 def s2_by_title(title: str):
     url = "https://api.semanticscholar.org/graph/v1/paper/search"
     params = {"query": title, "limit": 1, "fields": "title,year,citationCount,url"}
-    r = requests.get(url, params=params, headers={"User-Agent": "CitationChecker/0.1"}, timeout=15)
+    r = requests.get(url, params=params, headers={"User-Agent": "CitationChecker/0.1"}, timeout=50)
     if r.status_code != 200:
         return {"source": "Semantic Scholar", "error": f"HTTP {r.status_code}"}
     js = r.json()
