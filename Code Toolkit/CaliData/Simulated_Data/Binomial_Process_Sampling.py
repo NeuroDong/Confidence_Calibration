@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2024/6/20 16:26 
+# @Time    : 2025/09/30 16:26 
 # @File    : Binomial_Process_Sampling.py
 # Reference paper: "Combining Priors with Experience: Confidence Calibration Based on Binomial Process Modeling"
 
