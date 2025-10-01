@@ -7,4 +7,4 @@
 # Simulated Dataset
 | Name | Code | Paper | Quickly Obtain |
 |-------|-------|-------|-------|
-|Binomial Process Sampling| [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/NeuroDong/TCEbpm) | [Combining Priors with Experience: Confidence Calibration Based on Binomial Process Modeling](https://ojs.aaai.org/index.php/AAAI/article/view/33792) | [Obtain](https://github.com/NeuroDong/Confidence_Calibration/blob/main/Datasets/Simulated_Datasets/Binomial_Process_Sampling.py)|
+|Binomial Process Sampling| [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/NeuroDong/TCEbpm) | [Combining Priors with Experience: Confidence Calibration Based on Binomial Process Modeling](https://ojs.aaai.org/index.php/AAAI/article/view/33792) | [Obtain](https://github.com/NeuroDong/Confidence_Calibration/blob/main/Code%20Toolkit/CaliData/Simulated_Data/Binomial_Process_Sampling.py)|
