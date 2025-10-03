@@ -1,1 +1,2 @@
 from .Logit_Datasets_for_Neural_Networks import get_logit_datasets, unpickle_probs
+from .CREDIT import fetch_ucirepo

@@ -1,3 +1,7 @@
+'''
+Yeh, I. (2009). Default of Credit Card Clients [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C55S3H.
+'''
+
 from ucimlrepo import fetch_ucirepo
 
 if __name__=="__main__":
