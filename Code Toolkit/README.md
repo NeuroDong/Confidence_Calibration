@@ -17,6 +17,7 @@ A comprehensive code toolkit for confidence calibration. It provides codes for:
     - [General_loss](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss)
     - [In_training](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/In_training)
     - [Post_hoc](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/Post_hoc)
+      - [scaling_binning.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/Post_hoc/scaling_binning.py)
  - [CaliMetric](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric)
     - [Multi_Calibration](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Multi_Calibration)
       - [ECE_KDE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Multi_Calibration/ECE_KDE.py)
