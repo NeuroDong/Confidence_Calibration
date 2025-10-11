@@ -15,6 +15,7 @@ A comprehensive code toolkit for confidence calibration. It provides codes for:
      - [Binomial_Process_Sampling.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliData/Simulated_Data/Binomial_Process_Sampling.py)
  - [CaliMethod](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod)
     - [General_loss](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss)
+      - [Soft_binned_ECE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss/Soft_binned_ECE.py)
     - [In_training](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/In_training)
     - [Post_hoc](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/Post_hoc)
       - [scaling_binning.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/Post_hoc/scaling_binning.py)
