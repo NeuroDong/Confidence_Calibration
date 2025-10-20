@@ -6,6 +6,21 @@
 import torch
 from torch import nn
 
+def is_softmax_output(vec, atol=1e-6):
+    """
+    vec: 1D tensor of shape (C,) or 2D tensor (N, C)
+    """
+    if vec.dim() == 1:
+        s = vec.sum().item()
+        in_range = torch.all((vec >= -atol) & (vec <= 1 + atol)).item()
+        return in_range and abs(s - 1.0) <= atol
+    elif vec.dim() == 2:
+        s = vec.sum(dim=1)
+        in_range = torch.all((vec >= -atol) & (vec <= 1 + atol)).item()
+        return in_range and torch.all(torch.abs(s - 1.0) <= atol).item()
+    else:
+        raise ValueError("Expect 1D or 2D tensor.")
+
 def get_bandwidth(f, device):
     """
     Select a bandwidth for the kernel based on maximizing the leave-one-out likelihood (LOO MLE).
@@ -29,7 +44,7 @@ def get_bandwidth(f, device):
 
     return max_b
 
-def get_ece_kde(f, y, p, mc_type, device):
+def get_ece_kde(f, y, p=1, mc_type='canonical', device='cpu'):
     """
     Calculate an estimate of Lp calibration error.
 
@@ -42,6 +57,16 @@ def get_ece_kde(f, y, p, mc_type, device):
 
     :return: An estimate of Lp calibration error
     """
+    if not isinstance(f, torch.Tensor):
+        f = torch.as_tensor(f)
+    if not isinstance(y, torch.Tensor):
+        y = torch.as_tensor(y)
+    if len(f.shape) == 2:
+        if not is_softmax_output(f):
+            f = torch.softmax(f, dim=1)
+    else:
+        raise ValueError("Expect 2D tensor.")
+
     bandwidth = get_bandwidth(f, device)
     check_input(f, bandwidth, mc_type)
     if f.shape[1] == 1:
@@ -71,7 +96,8 @@ def get_ratio_canonical(f, y, bandwidth, p, device):
     log_kern = get_kernel(f, bandwidth, device)
     kern = torch.exp(log_kern)
 
-    y_onehot = nn.functional.one_hot(y, num_classes=f.shape[1]).to(torch.float32)
+    y_onehot = nn.functional.one_hot(y.long(), num_classes=f.shape[1]).to(torch.float32)
+    kern = kern.to(torch.float32)
     kern_y = torch.matmul(kern, y_onehot)
     den = torch.sum(kern, dim=1)
     # to avoid division by 0
@@ -213,6 +239,7 @@ if __name__ == "__main__":
     device = 'cpu'
     # Generate 1000 samples for f with random probabilities
     f = torch.softmax(torch.rand(1000, 3, device=device), dim=1)
+    f = torch.rand(1000, 3, device=device)
     # Generate 1000 random labels for y
     y = torch.randint(0, 3, (1000,), device=device)
 

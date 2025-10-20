@@ -4,13 +4,28 @@ import numpy as np
 
 EPS = 1e-5
 
+def is_softmax_output(vec, atol=1e-6):
+    """
+    vec: 1D tensor of shape (C,) or 2D tensor (N, C)
+    """
+    if vec.dim() == 1:
+        s = vec.sum().item()
+        in_range = torch.all((vec >= -atol) & (vec <= 1 + atol)).item()
+        return in_range and abs(s - 1.0) <= atol
+    elif vec.dim() == 2:
+        s = vec.sum(dim=1)
+        in_range = torch.all((vec >= -atol) & (vec <= 1 + atol)).item()
+        return in_range and torch.all(torch.abs(s - 1.0) <= atol).item()
+    else:
+        raise ValueError("Expect 1D or 2D tensor.")
+
 def soft_binning_ece(
         predictions,
         labels,
-        soft_binning_bins,
-        soft_binning_use_decay,
-        soft_binning_decay_factor,
-        soft_binning_temp,
+        soft_binning_bins = 15,
+        soft_binning_use_decay=True,
+        soft_binning_decay_factor=0.9,
+        soft_binning_temp=0.01
 ):
     """Computes and returns the soft-binned ECE (binned) scalar tensor (PyTorch).
 
@@ -19,7 +34,7 @@ def soft_binning_ece(
     defined in Eq. (6).
 
     Args:
-        predictions: 1D tensor (N,) of predicted confidences in [0, 1].
+        predictions: 1D tensor (N,) or (N,C)
         labels: 1D tensor (N,) of incorrect(0)/correct(1) labels.
         soft_binning_bins: number of bins (int).
         soft_binning_use_decay: whether temp is determined by decay factor (bool).
@@ -35,6 +50,12 @@ def soft_binning_ece(
         predictions = torch.as_tensor(predictions)
     if not isinstance(labels, torch.Tensor):
         labels = torch.as_tensor(labels)
+    if len(predictions.shape) == 2:
+        if is_softmax_output(predictions):
+            predictions = predictions.max(dim=1).values
+        else:
+            predictions = torch.softmax(predictions, dim=1).max(dim=1).values
+    
 
     predictions = predictions.reshape(-1)
     labels = labels.reshape(-1)
@@ -85,7 +106,9 @@ if __name__ == "__main__":
     # Example usage
     n = 1000
     labels = np.random.binomial(1, 0.7, n)
-    preds = np.clip(np.random.normal(0.7, 0.15, n), 0, 1)
+    #preds = np.clip(np.random.normal(0.7, 0.15, n), 0, 1)
+    preds = torch.randn(n,2)
+    preds = torch.softmax(preds, dim=1)
 
     ece = soft_binning_ece(
         predictions=preds,

@@ -3,6 +3,21 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
+def is_softmax_output(vec, atol=1e-6):
+    """
+    vec: 1D tensor of shape (C,) or 2D tensor (N, C)
+    """
+    if vec.dim() == 1:
+        s = vec.sum().item()
+        in_range = torch.all((vec >= -atol) & (vec <= 1 + atol)).item()
+        return in_range and abs(s - 1.0) <= atol
+    elif vec.dim() == 2:
+        s = vec.sum(dim=1)
+        in_range = torch.all((vec >= -atol) & (vec <= 1 + atol)).item()
+        return in_range and torch.all(torch.abs(s - 1.0) <= atol).item()
+    else:
+        raise ValueError("Expect 1D or 2D tensor.")
+
 class Robust_Sigmoid(torch.autograd.Function):
     """Aiming for a stable sigmoid operator with specified sigma"""
 
@@ -54,7 +69,7 @@ class DECE(nn.Module):
     Computes DECE loss (differentiable expected calibration error).
     """
 
-    def __init__(self, device, num_bins, t_a, t_b):
+    def __init__(self, device = 'cpu', num_bins = 10, t_a = 10., t_b = 1.):
         super(DECE, self).__init__()
         self.device = device
         self.num_bins = num_bins
@@ -79,25 +94,30 @@ class DECE(nn.Module):
         return encoded_indicies
 
     def forward(self, input, target):
-        if input.dim() > 2:
-            # N,C,H,W => N,C,H*W
-            input = input.view(input.size(0), input.size(1), -1)
-            input = input.transpose(1, 2)  # N,C,H*W => N,H*W,C
-            input = input.contiguous().view(-1, input.size(2))  # N,H*W,C => N*H*W,C
+        '''
+        input: 1D tensor (N,C) 
+        target: 1D tensor (N,)
+        '''
+        if not isinstance(input, torch.Tensor):
+            input = torch.as_tensor(input)
+        if not isinstance(target, torch.Tensor):
+            target = torch.as_tensor(target)
+        if len(input.shape) == 2:
+            if not is_softmax_output(input):
+                predicted_probs = torch.softmax(input, dim=1)
+            else:
+                predicted_probs = input
+        else:
+            raise ValueError("Expect 2D tensor.")
+        confidences = torch.max(predicted_probs, dim=1, keepdim=True)[0] 
 
-        # For CIFAR-10 and CIFAR-100, target.shape is [N] to begin with
-        target = target.view(-1)
-
-        predicted_probs = F.softmax(input, dim=1)
-
-        cut_points = torch.linspace(0, 1, self.num_bins + 1)[:-1].to(device=self.device)
+        cut_points = torch.linspace(0, 1, self.num_bins + 1)[:-1].to(device=self.device, dtype=confidences.dtype)
         W = torch.reshape(
-            torch.linspace(1.0, self.num_bins, self.num_bins).to(device=self.device),
+            torch.linspace(1.0, self.num_bins, self.num_bins).to(device=self.device, dtype=confidences.dtype),
             [1, -1],
         )
         b = torch.cumsum(-cut_points, 0)
 
-        confidences = torch.max(predicted_probs, dim=1, keepdim=True)[0]
         h = torch.matmul(confidences, W) + b
         h = h / self.t_b
 
@@ -145,7 +165,6 @@ class DECE(nn.Module):
             dim=0,
         )
         return ece
-
 
 if __name__ == "__main__":
     # Quick usage example to validate DECE computes without error.
