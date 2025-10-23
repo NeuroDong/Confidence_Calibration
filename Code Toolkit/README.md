@@ -27,5 +27,8 @@ A comprehensive code toolkit for confidence calibration. It provides codes for:
     - [Multi_Calibration](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Multi_Calibration)
       - [ECE_KDE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Multi_Calibration/ECE_KDE.py)
     - [Top_Label_Calibration](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Top_Label_Calibration)
+      - [Debiased_ECE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Top_Label_Calibration/Debiased_ECE.py)
+      - [ECE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Top_Label_Calibration/ECE.py)
+      - [KS_error.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMetric/Top_Label_Calibration/KS_error.py)
  - [CaliShow](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliShow)
     - [validity_plot.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliShow/validity_plot.py)
