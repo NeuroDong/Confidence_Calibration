@@ -18,7 +18,7 @@ A comprehensive code toolkit for confidence calibration. It provides codes for:
       - [Soft_binned_ECE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss/Soft_binned_ECE.py)
       - [Soft_AvUS.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss/Soft_AvUS.py)
       - [AvUS.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss/AvUS.py)
-      - [DECE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss/DECE.py)s
+      - [DECE.py](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/General_loss/DECE.py)
       - [dual_focal_loss.py](https://github.com/NeuroDong/Confidence_Calibration/blob/main/Code%20Toolkit/CaliMethod/General_loss/dual_focal_loss.py)
       - [LSECE.py](https://github.com/NeuroDong/Confidence_Calibration/blob/main/Code%20Toolkit/CaliMethod/General_loss/LSECE.py)
     - [In_training](https://github.com/NeuroDong/Confidence_Calibration/tree/main/Code%20Toolkit/CaliMethod/In_training)
