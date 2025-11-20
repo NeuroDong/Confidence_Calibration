@@ -12,7 +12,8 @@ def kernel_reg(logits, labels, ts, sigma):
 
 def logit_smoothed_ece(logits, labels, n_t, sigma):
     """
-    Compute logit-smoothed Expected Calibration Error (ECE)
+    Compute logit-smoothed Expected Calibration Error (LS-ECE)
+    LS-ECE loss is defined in Eq. (4.1) of https://arxiv.org/abs/2402.10046.
     
     Args:
         logits: Logits tensor of shape (n, 1)

@@ -10,6 +10,21 @@ class DualFocalLoss(nn.Module):
         self.size_average = size_average
 
     def forward(self, input, target):
+        """Computes and returns the Dual Focal Loss tensor (PyTorch).
+
+        Dual Focal Loss is defined in Eq. (4) of https://arxiv.org/abs/2305.13665.
+
+        Reference:
+            [1] Wang, Z., et al. (2023). Dual Focal Loss for Calibration.
+                arXiv: https://arxiv.org/abs/2305.13665
+
+        Args:
+            input: (N, C) predicted logits.
+            target: (N,) integer labels in [0, C).
+
+        Returns:
+            torch.Tensor containing the Dual Focal Loss.
+        """
         if input.dim()>2:
             input = input.view(input.size(0),input.size(1),-1)  # N,C,H,W => N,C,H*W
             input = input.transpose(1,2)    # N,C,H*W => N,H*W,C
